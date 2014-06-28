@@ -1,0 +1,67 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function caipiao_menu() {
+  $items = array();
+
+  $items['export/caipiao'] = array(
+    'title' => '导入彩票',
+    'page callback' => 'export_caipiaozonghe',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+	return $items;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function caipiao_cron() {
+	//export_caipiaozonghe();
+}
+
+/**
+ * 导入2003第一期到今天所有的期数.
+ *   from http://taobao.cjcp.com.cn/cjwssq/view/ssqzonghe-1-2001003-2014072-1.html
+ */
+function export_caipiaozonghe() {
+	$path = DRUPAL_ROOT . '/' . drupal_get_path('module', 'caipiao') . '/ssq.txt';
+
+	$html = file($path);
+	foreach ($html as $row) {
+		$r1 = explode(" ", $row);
+		$qihao = $r1[0];
+		$timestamp = $r1[1];
+		$h1 = $r1[2];
+		$h2 = $r1[3];
+		$h3 = $r1[4];
+		$h4 = $r1[5];
+		$h5 = $r1[6];
+		$h6 = $r1[7];
+		$lan = $r1[8];
+
+		db_insert('caipiaozonghe') 
+		->fields(array(
+		  'h1' => $h1,
+		  'h2' => $h2,
+		  'h3' => $h3,
+		  'h4' => $h4,
+		  'h5' => $h5,
+		  'h6' => $h6,
+		  'hong' => $h1 . $h2 . $h3 . $h4 . $h5 . $h6,
+		  'lan' => $lan,
+		  'honglan' => $h1 . $h2 . $h3 . $h4 . $h5 . $h6 . $lan,
+		  'qihao' => $qihao,
+		  'timestamp' => $timestamp,
+		))
+		->execute();
+	}
+
+}
+

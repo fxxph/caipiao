@@ -1,0 +1,5 @@
+core            = "7.x"
+description     = "彩票"
+name            = "caipiao"
+package         = "other"
+version = "7.x-1.0"

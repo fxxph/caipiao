@@ -1,0 +1,98 @@
+<?php
+/**
+ * @file
+ * Install, update and unintstall functions for the ccrs_device api module
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function caipiao_schema() {
+  $schema = array();
+
+  $schema['caipiaozonghe'] = array(
+    'description' => '彩票总和',
+    'fields' => array(
+      'id' => array(
+        'description' => '主键ID',
+        'type' => 'serial', 
+        'not null' => TRUE
+      ),
+      'h1' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => '红球1号码',
+      ),  
+      'h2' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => '红球2号码',
+      ),  
+      'h3' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => '红球3号码',
+      ),  
+      'h4' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => '红球4号码',
+      ),  
+      'h5' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => '红球5号码',
+      ),      
+      'h6' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => '红球6号码',
+      ),                                
+      'hong' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 64,
+        'default' => '',
+        'description' => '红球所有号码',
+      ),
+      'honglan' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 64,
+        'default' => '',
+        'description' => '红球蓝球号码',
+      ),
+      'lan' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 32,
+        'default' => '',
+        'description' => '蓝球号码',
+      ),
+      'qihao' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 32,
+        'default' => '',
+        'description' => '期号',
+      ),
+      'timestamp' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 32,
+        'default' => '',
+        'description' => '开奖时间',
+      ),      
+    ),
+    'primary key' => array('id')
+  );
+
+  return $schema;
+}
+
