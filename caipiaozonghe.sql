@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 06 月 28 日 11:12
+-- 生成日期: 2014 年 06 月 30 日 05:22
 -- 服务器版本: 5.6.12
 -- PHP 版本: 5.5.3
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `caipiaozonghe` (
   `qihao` varchar(32) NOT NULL DEFAULT '' COMMENT '期号',
   `timestamp` varchar(32) NOT NULL DEFAULT '' COMMENT '开奖时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='彩票总和' AUTO_INCREMENT=1666 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='彩票总和' AUTO_INCREMENT=1667 ;
 
 --
 -- 转存表中的数据 `caipiaozonghe`
@@ -1714,7 +1714,8 @@ INSERT INTO `caipiaozonghe` (`id`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `hong`, `
 (1662, 5, 12, 17, 19, 25, 30, '051217192530', '05121719253011', '11', '2014069', '2014-06-19'),
 (1663, 1, 7, 9, 19, 28, 29, '010709192829', '01070919282907', '07', '2014070', '2014-06-22'),
 (1664, 2, 4, 12, 17, 22, 25, '020412172225', '02041217222514', '14', '2014071', '2014-06-24'),
-(1665, 1, 3, 7, 13, 19, 32, '010307131932', '01030713193216', '16', '2014072', '2014-06-26');
+(1665, 1, 3, 7, 13, 19, 32, '010307131932', '01030713193216', '16', '2014072', '2014-06-26'),
+(1666, 1, 12, 16, 20, 30, 33, '011216203033', '01121620303302', '02', '2014073', '2014-06-29');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
